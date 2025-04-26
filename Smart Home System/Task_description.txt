@@ -1,0 +1,62 @@
+Smart Home Device Manager
+This project simulates a smart home system that manages various devices like Lights, Cameras, and Heaters.
+Each device can be turned on or off, and specific settings can be adjusted when a device is powered on.
+
+
+Devices and Behaviors:
+
+Lights can change brightness and color when active.
+
+Cameras can adjust their angle and start/stop recording when turned on.
+
+Heaters allow temperature adjustments within a specified range when operational.
+
+
+Initial Setup:
+
+4 Lights (IDs 0-3) start ON, with low brightness and yellow color.
+
+2 Cameras (IDs 4-5) start ON, at a 45° angle, and not recording.
+
+4 Heaters (IDs 6-9) start ON, each set to 20°C.
+
+
+Device Rules:
+
+Only Lights and Cameras are chargeable.
+
+Lights' colors can be either YELLOW or WHITE.
+
+Brightness can be LOW, MEDIUM, or HIGH.
+
+Cameras' angles must stay within -60° to 60°.
+
+Heaters' temperature must stay between 15°C and 30°C.
+
+If a device is OFF, its settings can't be changed (except for charging).
+
+
+Supported Commands:
+
+DisplayAllStatus – Show the status of all devices.
+
+TurnOn, TurnOff – Switch a device's power state.
+
+StartCharging, StopCharging – Control device charging.
+
+SetTemperature, SetBrightness, SetColor, SetAngle – Modify device-specific settings.
+
+StartRecording, StopRecording – Control camera recording.
+
+end – Finish the program.
+
+
+Command Handling:
+
+Commands follow a strict format.
+
+Errors are returned for invalid commands, device mismatches, or setting violations.
+
+Successful operations provide confirmation messages.
+
+The system processes commands until the end keyword is received.
