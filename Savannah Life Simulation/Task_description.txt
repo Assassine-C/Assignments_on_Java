@@ -1,0 +1,55 @@
+Summary:
+This program simulates the behavior of animals living together in a shared grassy field over several days.
+Animals interact based on their type — herbivores (like Zebras) eat grass, carnivores (like Lions) hunt
+other animals, and omnivores (like Boars) do both. Each animal has properties like type, weight, speed,
+and energy. The animals are arranged in a circle, and interactions only happen between an animal and the
+one directly ahead.
+
+
+Simulation Rules:
+
+Every day, each animal loses 1% of its energy naturally.
+
+Grass grows daily, doubling in amount, but cannot exceed 100.
+
+Herbivores and Omnivores graze if enough grass is available (relative to their weight).
+
+Carnivores hunt prey if the prey is slower or has less energy, but only animals of a different type (no cannibalism or self-hunting).
+
+Omnivores try to graze first, then hunt if possible.
+
+Animals that reach 0% energy die and are removed from the simulation.
+
+After eating, animals regain energy (up to 100%), but prey always dies if attacked, even if the hunter is already at full energy.
+
+
+Sounds:
+Each animal has a unique sound:
+
+Lion: "Roar"
+
+Zebra: "Ihoho"
+
+Boar: "Oink"
+
+
+Inputs:
+
+Read from input.txt.
+
+First line: number of days to simulate (1–30).
+
+Second line: initial grass amount (0–100).
+
+Third line: number of animals (1–20).
+
+Next lines: animal details — Type, Weight, Speed, and Energy.
+
+
+Outputs:
+
+Errors in the input (like wrong grass amount, wrong number of parameters, invalid values) cause immediate termination with an error message.
+
+During the simulation, non-critical exceptions (e.g., cannibalism attempt, failed hunts) are reported but do not stop the program.
+
+After the simulation, each surviving animal produces its sound, printed in the order they were initially read.
